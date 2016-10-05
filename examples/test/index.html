@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+options : {{options | json}}
+<!--<vtable :options="options"></vtable>-->
+
+<vtable :options="options" :maxHeight="50">
+    <vthead>
+        <vtr>
+            <vth>名称</vth><vth>城市</vth><vth>邮箱</vth>
+        </vtr>
+    </vthead>
+    <vtbody>
+        <vtr v-for="row in options.data">
+            <vtd>Hello {{row.first_name}}</vtd>
+            <vtd>{{row.city}}</vtd>
+            <vtd>{{row.email}}</vtd>
+        </vtr>
+    </vtbody>
+</vtable>
+
+<!--<script src="../../node_modules/vue/dist/vue.min.js"></script>-->
+<script src="../app.build.js"></script>
+</body>
+</html>
